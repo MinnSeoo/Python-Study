@@ -34,8 +34,8 @@ basic_attack(champion2_name, champion2_attack)
 print("================== 클래스를 사용한 경우 ===================")
 
 class Champion:
-    def __init__(self, name, health, attack):
-        self.name = name
+    def __init__(self, name, health, attack):   # __init__ 메서드는 Champion 클래스의 생성자 이다. 
+        self.name = name                        # 생성자의 인자값으로 self가 있는데 이는 인스턴스 자신을 나타내는 매개변수이다.
         self.health = health
         self.attack = attack
         print(f"{name}님 소환사의 협곡에 오신걸 환영합니다.")
@@ -54,3 +54,10 @@ yasuo.basic_attack()
 
 # 클래스는 속성과 메서드로 이루어진다. 
 # 이때 이 속성은 특징을 나타내고, 메서드는 동작들을 나타낸다.
+
+# 파이썬에서는 자료형도 클래스이다.
+a = 10
+b = "문자열객체"
+c = True
+
+print(b.__dir__())  # 문자열 객체 안에 있는 메서드 리스트를 확인가능
