@@ -16,3 +16,10 @@ def createTodo(request):
     new_todo.save()
     return HttpResponseRedirect(reverse('index'))
     # return HttpResponse("Create Todo! =>" + user_input_str)                     # user에게 해당 메시지를 출력해줌.
+
+def doneTodo(request):
+    done_Todo_id = request.GET['todoNum']
+    print("완료한 todo의 id -> ", done_Todo_id)
+    todo = Todo.objects.get(id = done_Todo_id)
+    todo.delete()
+    return HttpResponseRedirect(reverse('index'))
