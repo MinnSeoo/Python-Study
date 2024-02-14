@@ -21,5 +21,6 @@ def doneTodo(request):
     done_Todo_id = request.GET['todoNum']
     print("완료한 todo의 id -> ", done_Todo_id)
     todo = Todo.objects.get(id = done_Todo_id)
-    todo.delete()
+    todo.isDone = True
+    todo.save()
     return HttpResponseRedirect(reverse('index'))
